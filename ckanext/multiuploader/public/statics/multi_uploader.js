@@ -65,7 +65,8 @@ $(document).ready(function () {
     // Prevent the default CKAN form submission 
     $("#resource-edit").on('submit', function (e) {
         e.preventDefault();
-        var sBtn = $(this).val();
+        var sBtn = e.originalEvent.submitter ? $(e.originalEvent.submitter).val() : null; 
+        console.log(sBtn)
         if ($(this).val() === "go-dataset") {
             // previous step (dataset metadat page)
             previous("go-dataset");
@@ -95,10 +96,17 @@ $(document).ready(function () {
                 backdrop: 'static',
                 keyboard: false,
             });
+            
+            // Extract values before uploading files
+            var pckId = $('#pck_id').val();
+            var saveAction = sBtn; // Save the action (button value)
+            var idValue = $('#id').val(); // Default for id
+            var descriptionValue = $('#field-description').val();
+
             $('#progress-modal').modal('show'); // Show the modal
             for (var i = 0; i < validFiles.length; i++) {
                 // Upload only valid files
-                uploadFiles(validFiles[i], sBtn, validFiles.length);
+                uploadFiles(validFiles[i], saveAction, validFiles.length, pckId, idValue, descriptionValue);
             }
         }
         else {
@@ -157,16 +165,16 @@ function checkFileSizes() {
 /**
  * Upload a file to the server
  */
-function uploadFiles(file, action, Max) {
+function uploadFiles(file, action, Max, pckId, idValue, descriptionValue) {
     var formdata = new FormData();
     let reqUpload = new XMLHttpRequest();
     uploadReqs.push(reqUpload);
     formdata.set('files', file);
     formdata.set('isLink', 0);
-    formdata.set('pck_id', $('#pck_id').val());
+    formdata.set('pck_id', pckId);
     formdata.set('save', action);
-    formdata.set('id', $('#id').val());
-    formdata.set('description', $('#field-description').val());
+    formdata.set('id', idValue);
+    formdata.set('description', descriptionValue);
     var csrf_value = $('meta[name=_csrf_token]').attr('content');
     formdata.append('_csrf_token', csrf_value);
 

@@ -4,6 +4,7 @@ from flask import request
 import ckan.lib.helpers as h
 from ckanext.multiuploader.lib import Helper
 import ckan.plugins.toolkit as toolkit
+log = __import__("logging").getLogger(__name__)
 
 
 class UploadController:
@@ -63,8 +64,9 @@ class UploadController:
                     return h.url_for(
                         "dataset.read", id=str(package_name), _external=True
                     )
-            except:
-                return toolkit.abort(400, "missing data")
+            except Exception as e:
+                log.debug(f"Error {e}")
+                return toolkit.abort(400, str(e))
 
         else:
             return toolkit.abort(

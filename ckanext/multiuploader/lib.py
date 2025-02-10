@@ -1,13 +1,12 @@
 # encoding: utf-8
 
 import ckan.plugins.toolkit as toolkit
-
 class Helper():
 
     def add_resource(package_name, request, active, isLink):
-        package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
+        context = {'user': toolkit.g.user}
+        package = toolkit.get_action('package_show')(context, {'id': package_name})
         description = request.form['description']
-        context = {}
         if isLink == 1: # resource is a link not file
             resource_data = {}
             resource_data = {
@@ -21,7 +20,7 @@ class Helper():
             package['resources'].append(resource)
             if active:
                 package['state'] = 'active'
-            toolkit.get_action('package_update')({},package)
+            toolkit.get_action('package_update')(context,package)
             return True
 
 
@@ -36,11 +35,11 @@ class Helper():
                 'upload': resource,
             }
             resource = toolkit.get_action('resource_create')(context, resource_data)
-            package = toolkit.get_action('package_show')({}, {'name_or_id': package_name})
+            package = toolkit.get_action('package_show')(context, {'id': package_name})
             package['resources'].append(resource)
             if active:
                 package['state'] = 'active'
-            toolkit.get_action('package_update')({},package)
+            toolkit.get_action('package_update')(context,package)
             
         return True
     
