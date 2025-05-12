@@ -3,7 +3,7 @@
 
 # ckanext-multiuploader
 
-This CKAN extension helps users to upload multiple resources at once with drag&drop. 
+This CKAN extension helps users to upload multiple resources at once with drag&drop. It adds an extra form for uploadig multiple files and leaves the vanilla one untouched. 
 
 
 ## Requirements
@@ -32,7 +32,7 @@ To install the extension:
 ```
 2. Use pip to install package
 ```bash
-pip install ckanext-multiuploader
+pip install ckanext-multiuploader-addon
 ```
 3. Add `multiuploader` to the `ckan.plugins` setting in your CKAN
    config file (by default the config file is located at
