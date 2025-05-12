@@ -11,7 +11,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='''ckanext-multiuploader''',
+    name='''ckanext-multiuploader-addon''',
     version=environ.get('VERSION', '0.0.0'),
     description='''This CKAN extension helps users to upload multiple resources at once with drag&drop.''',
     long_description=long_description,

@@ -1,7 +1,6 @@
 [![Tests](https://github.com/Mat-O-Lab/ckanext-multiuploader/actions/workflows/test.yml/badge.svg)](https://github.com/Mat-O-Lab/ckanext-multiuploader/actions/workflows/test.yml)
 
-
-# ckanext-multiuploader
+# ckanext-multiuploader-addon
 
 This CKAN extension helps users to upload multiple resources at once with drag&drop. It adds an extra form for uploadig multiple files and leaves the vanilla one untouched. 
 
@@ -52,7 +51,7 @@ ckan.max_resource_size
 
 ## Developer installation
 
-To install ckanext-multiuploader for development, activate your CKAN virtualenv and
+To install ckanext-multiuploader-addon for development, activate your CKAN virtualenv and
 do:
 ```bash
 git clone https://github.com/Mat-O-Lab/ckanext-multiuploader.git
