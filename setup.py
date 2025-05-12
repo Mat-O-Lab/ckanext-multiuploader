@@ -2,7 +2,7 @@
 
 from setuptools import setup, find_packages
 from codecs import open  # To use a consistent encoding
-from os import path
+from os import path, environ
 
 here = path.abspath(path.dirname(__file__))
 
@@ -12,17 +12,16 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='''ckanext-multiuploader''',
-    version='1.5.0',
+    version=environ.get('VERSION', '0.0.0'),
     description='''This CKAN extension helps users to upload multiple resources at once with drag&drop.''',
     long_description=long_description,
-    long_description_content_type="text/markdown",
-
+    
     # The project's main homepage.
-    url='https://github.com/TIBHannover/ckanext-multiuploader',
+    url='https://github.com/Mat-O-Lab/ckanext-multiuploader',
 
     # Author details
-    author='''Pooya Oladazimi, Technische Informationsbibliothek(TIB)''',
-    author_email='''pooya.oladazimi@tib.eu''',
+    author='''Thomas Hanke''',
+    author_email='''thomas.hanke@iwm.fraunhofer.de''',
 
     # Choose your license
     license='AGPL',
@@ -45,7 +44,7 @@ setup(
 
 
     # What does your project relate to?
-    keywords='''CKAN''',
+    keywords='''CKAN Upload''',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
