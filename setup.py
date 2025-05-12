@@ -15,7 +15,7 @@ setup(
     version=environ.get('VERSION', '0.0.0'),
     description='''This CKAN extension helps users to upload multiple resources at once with drag&drop.''',
     long_description=long_description,
-    
+    long_description_content_type="text/markdown",
     # The project's main homepage.
     url='https://github.com/Mat-O-Lab/ckanext-multiuploader',
 
