@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask.views import MethodView
 import ckan.plugins.toolkit as toolkit
 import ckan.lib.base as base
-from ckanext.multiuploader.controllers import UploadController
+from ckanext.multiuploadform.controllers import UploadController
 from ckan.types import Context
 from typing import Any, Optional
 from ckan.common import _, current_user
@@ -11,11 +11,11 @@ log = __import__("logging").getLogger(__name__)
 
 
 blueprint = Blueprint(
-    "multiuploader", __name__, url_defaults={"package_type": "dataset"}
+    "multiuploadform", __name__, url_defaults={"package_type": "dataset"}
 )
 
 
-class MultiUploaderView(MethodView):
+class multiuploadformView(MethodView):
     # post is handled by javascript
     def get(
         self,
@@ -51,7 +51,7 @@ class MultiUploaderView(MethodView):
             "errors": errors,
             "error_summary": error_summary,
             # u'action': u'new',
-            "resource_form_snippet": "multiuploader/snippets/multiupload_form.html",
+            "resource_form_snippet": "multiuploadform/snippets/multiupload_form.html",
             "dataset_type": package_type,
             "pkg_name": id,
             "pkg_dict": pkg_dict,
@@ -65,18 +65,18 @@ class MultiUploaderView(MethodView):
 
 blueprint.add_url_rule(
     "/dataset/<id>/resource/multiupload",
-    view_func=MultiUploaderView.as_view(str("resource_view")),
+    view_func=multiuploadformView.as_view(str("resource_view")),
 )
 
 blueprint.add_url_rule(
-    "/multiuploader/upload_resources",
+    "/multiuploadform/upload_resources",
     "upload_resources",
     UploadController.upload_resources,
     methods=["POST"],
 )
 
 blueprint.add_url_rule(
-    "/multiuploader/delete_uploaded_resources",
+    "/multiuploadform/delete_uploaded_resources",
     "delete_uploaded_resources",
     UploadController.delete_uploaded_resources,
     methods=["POST"],

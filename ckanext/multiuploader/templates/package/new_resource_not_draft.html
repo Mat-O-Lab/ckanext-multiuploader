@@ -2,7 +2,7 @@
 
 {% block content_primary_nav %}
 {{ super() }}
-{{ h.build_nav_icon('multiuploader.resource_view', _('Multi Upload'), id=pkg.name, icon='upload') }}
+{{ h.build_nav_icon('multiuploadform.resource_view', _('Multi Upload'), id=pkg.name, icon='upload') }}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Replace the button with id "replace-button" after the content is loaded

@@ -14,14 +14,14 @@ with open(path.join(here,"requirements.txt")) as f:
     requirements = f.read().splitlines()
 
 setup(
-    name='''ckanext-multiuploader-addon''',
+    name='''ckanext-multiuploadform''',
     version=environ.get('VERSION', '0.0.0'),
     description='''This CKAN extension helps users to upload multiple resources at once with drag&drop.''',
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=requirements,
     # The project's main homepage.
-    url='https://github.com/Mat-O-Lab/ckanext-multiuploader',
+    url='https://github.com/Mat-O-Lab/ckanext-multiuploadform',
 
     # Author details
     author='''Thomas Hanke''',
@@ -51,7 +51,7 @@ setup(
     keywords='''CKAN Upload''',
     entry_points='''
         [ckan.plugins]
-        multiuploader=ckanext.multiuploader.plugin:MultiuploaderPlugin
+        multiuploadform=ckanext.multiuploadform.plugin:multiuploadformPlugin
 
         [babel.extractors]
         ckan = ckan.lib.extract:extract_ckan

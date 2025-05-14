@@ -2,11 +2,11 @@
 
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
-from ckanext.multiuploader.controllers import UploadController
-from ckanext.multiuploader import views
+from ckanext.multiuploadform.controllers import UploadController
+from ckanext.multiuploadform import views
 
 
-class MultiuploaderPlugin(plugins.SingletonPlugin):
+class multiuploadformPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IBlueprint)
     plugins.implements(plugins.ITemplateHelpers)
@@ -16,8 +16,8 @@ class MultiuploaderPlugin(plugins.SingletonPlugin):
     def update_config(self, config_):
         toolkit.add_template_directory(config_, "templates")
         toolkit.add_public_directory(config_, "public")
-        toolkit.add_resource("fanstatic", "multiuploader")
-        toolkit.add_resource("public/statics", "ckanext-multiuploader")
+        toolkit.add_resource("fanstatic", "multiuploadform")
+        toolkit.add_resource("public/statics", "ckanext-multiuploadform")
 
     # IBlueprint
 

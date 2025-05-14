@@ -1,5 +1,5 @@
 # encoding: utf-8
-'''Tests for the ckanext.multiuploader extension.
+'''Tests for the ckanext.multiuploadform extension.
 
 '''
 import pytest
@@ -30,7 +30,7 @@ import ckan.lib.create_test_data as ctd
 #             'id': '',
 #             'description': 'Test Test',
 #         }
-#         self.upload_url = h.url_for('multiuploader.upload_resources')  
+#         self.upload_url = h.url_for('multiuploadform.upload_resources')  
 
 
 

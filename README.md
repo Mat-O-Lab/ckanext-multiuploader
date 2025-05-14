@@ -1,6 +1,6 @@
-[![Tests](https://github.com/Mat-O-Lab/ckanext-multiuploader/actions/workflows/test.yml/badge.svg)](https://github.com/Mat-O-Lab/ckanext-multiuploader/actions/workflows/test.yml)
+[![Tests](https://github.com/Mat-O-Lab/ckanext-multiuploadform/actions/workflows/test.yml/badge.svg)](https://github.com/Mat-O-Lab/ckanext-multiuploadform/actions/workflows/test.yml)
 
-# ckanext-multiuploader-addon
+# ckanext-multiuploadform
 
 This CKAN extension helps users to upload multiple resources at once with drag&drop. It adds an extra form for uploadig multiple files and leaves the vanilla one untouched. 
 
@@ -31,9 +31,9 @@ To install the extension:
 ```
 2. Use pip to install package
 ```bash
-pip install ckanext-multiuploader-addon
+pip install ckanext-multiuploadform
 ```
-3. Add `multiuploader` to the `ckan.plugins` setting in your CKAN
+3. Add `multiuploadform` to the `ckan.plugins` setting in your CKAN
    config file (by default the config file is located at
    `/etc/ckan/default/ckan.ini`).
 
@@ -51,11 +51,11 @@ ckan.max_resource_size
 
 ## Developer installation
 
-To install ckanext-multiuploader-addon for development, activate your CKAN virtualenv and
+To install ckanext-multiuploadform for development, activate your CKAN virtualenv and
 do:
 ```bash
-git clone https://github.com/Mat-O-Lab/ckanext-multiuploader.git
-cd ckanext-multiuploader
+git clone https://github.com/Mat-O-Lab/ckanext-multiuploadform.git
+cd ckanext-multiuploadform
 python setup.py develop
 pip install -r dev-requirements.txt
 ```
@@ -68,4 +68,4 @@ pytest --ckan-ini=test.ini
 ```
 
 # Acknowledgments
-The authors would like to thank the developers of the original project https://github.com/TIBHannover/ckanext-multiuploader.
+The authors would like to thank the developers of the original project https://github.com/TIBHannover/ckanext-multiuploadform.

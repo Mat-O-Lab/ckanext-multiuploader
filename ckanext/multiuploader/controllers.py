@@ -2,7 +2,7 @@
 
 from flask import request
 import ckan.lib.helpers as h
-from ckanext.multiuploader.lib import Helper
+from ckanext.multiuploadform.lib import Helper
 import ckan.plugins.toolkit as toolkit
 log = __import__("logging").getLogger(__name__)
 

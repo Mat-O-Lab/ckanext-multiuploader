@@ -51,7 +51,7 @@ jobs:
       #
       # ALTERNATIVE: if your GitHub Release name is the PyPI project version string
       # ALTERNATIVE: exactly, uncomment the following line instead:
-      url: https://pypi.org/project/${GITHUB_REPOSITORY#*/}-addon/${{ github.event.release.name }}
+      url: https://pypi.org/project/${GITHUB_REPOSITORY#*/}/${{ github.event.release.name }}
 
     steps:
       - name: Retrieve release distributions
@@ -88,7 +88,7 @@ jobs:
 
     environment:
       name: testpypi
-      url: https://test.pypi.org/p/${GITHUB_REPOSITORY#*/}-addon
+      url: https://test.pypi.org/p/${GITHUB_REPOSITORY#*/}
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
