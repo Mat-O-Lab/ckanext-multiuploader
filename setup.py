@@ -49,6 +49,8 @@ setup(
 
     # What does your project relate to?
     keywords='''CKAN Upload''',
+    packages=find_packages(exclude=["contrib", "docs", "tests*"]),
+    namespace_packages=["ckanext"],
     entry_points='''
         [ckan.plugins]
         multiuploadform=ckanext.multiuploadform.plugin:multiuploadformPlugin
