@@ -22,14 +22,11 @@ setup(
     install_requires=requirements,
     # The project's main homepage.
     url='https://github.com/Mat-O-Lab/ckanext-multiuploadform',
-
     # Author details
     author='''Thomas Hanke''',
     author_email='''thomas.hanke@iwm.fraunhofer.de''',
-
     # Choose your license
     license='AGPL',
-
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         # How mature is this project? Common values are
@@ -45,11 +42,10 @@ setup(
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 3',
     ],
-
-
     # What does your project relate to?
     keywords='''CKAN Upload''',
     packages=find_packages(exclude=["contrib", "docs", "tests*"]),
+    include_package_data=True,
     namespace_packages=["ckanext"],
     entry_points='''
         [ckan.plugins]
