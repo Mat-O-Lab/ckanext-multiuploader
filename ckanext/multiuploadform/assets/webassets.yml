@@ -1,11 +1,11 @@
 multiuploadform-css:
-  output: ckanext-multiuploadform/%(version)s_multiuploadform.css
+  output: multiuploadform/%(version)s_multiuploadform.css
   contents:
     - multi_uploader.css
 
 
 multiuploadform-js:  
-  output: ckanext-multiuploadform/%(version)s_multiuploadform.js
+  output: multiuploadform/%(version)s_multiuploadform.js
   extra:
     preload:
       - base/main
