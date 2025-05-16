@@ -1,5 +1,11 @@
 {% ckan_extends %}
 
+{%- block styles %}
+{{ super() }}
+{% asset 'multiuploadform/multiuploadform-css' %}
+{% endblock %}
+
+
 {% block page_header %}
 <header class="module-content page-header">
     {% if self.content_action() | trim %}
@@ -18,4 +24,9 @@
 
 {% block form %}
 {{ super() }}
+{% endblock %}
+
+{%- block scripts %}
+{{ super() }}
+{% asset 'multiuploadform/multiuploadform-js' %}
 {% endblock %}

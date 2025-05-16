@@ -1,5 +1,10 @@
 {% ckan_extends %}
 
+{%- block styles %}
+{{ super() }}
+{% asset 'multiuploadform/multiuploadform-css' %}
+{% endblock %}
+
 {% block content_primary_nav %}
 {{ super() }}
 {{ h.build_nav_icon('multiuploadform.resource_view', _('Multi Upload'), id=pkg.name, icon='upload') }}
@@ -16,4 +21,9 @@
 
 {% block form %}
 {{ super() }}
+{% endblock %}
+
+{%- block scripts %}
+{{ super() }}
+{% asset 'multiuploadform/multiuploadform-js' %}
 {% endblock %}
